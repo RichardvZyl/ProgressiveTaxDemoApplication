@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressiveTaxDemoApp.Web", "ProgressiveTaxDemoApp\ProgressiveTaxDemoApp.Web.csproj", "{85C7E904-FAC1-4B35-B1C5-A1E7F39183C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressiveTaxDemoApp.Framework", "ProgressiveTaxDemoApp.Services\ProgressiveTaxDemoApp.Framework.csproj", "{307309AF-A95B-4BA7-A37F-AF896126327D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressiveTaxDemoApp.Database", "ProgressiveTaxDemoApp.DAL\ProgressiveTaxDemoApp.Database.csproj", "{98F98D4F-4C05-4A13-B475-0C45478438B3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressiveTaxDemoApp.Domain", "ProgressiveTaxDemoApp.Domain\ProgressiveTaxDemoApp.Domain.csproj", "{0773E1DB-C719-41FE-AC6B-6C188CFE069C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressiveTaxDemoApp.Validation", "ProgressiveTaxDemoApp.Validation\ProgressiveTaxDemoApp.Validation.csproj", "{8A9D6093-AB42-4FD6-A782-091A760E0F13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Abstractions", "Abstractions", "{AC46CCE1-7DFC-49A8-BF1D-3EEBB2361E87}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abstractions", "Abstractions\Abstractions.csproj", "{7F84FDBC-D757-4887-809E-C016661AC802}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxDemoApplication.EndPoints", "ProgressiveTaxDemoApplication.EndPoints\ProgressiveTaxDemoApplication.EndPoints.csproj", "{0FC4601C-C4E0-4C08-8420-245EF261FB48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxDemoApplication.DAL", "ProgressiveTaxDemoApplication.DAL\ProgressiveTaxDemoApplication.DAL.csproj", "{FF988E61-2794-450E-A7AD-265B9F37291E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressiveTaxDemoApp.Models", "ProgressiveTaxDemoApp.Model\ProgressiveTaxDemoApp.Models.csproj", "{F0ACA542-523E-466E-B553-A930F6D236C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8AF183E0-43C4-464F-BB29-6410327F9ED2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMapper.tests", "AutoMapper.tests\AutoMapper.tests.csproj", "{1EFF525D-3C73-42FB-8320-3E8587FC9554}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{95CAE3D5-C95B-4F4E-BF80-6879F0F2EB11}"
+	ProjectSection(SolutionItems) = preProject
+		.gitIgnore = .gitIgnore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85C7E904-FAC1-4B35-B1C5-A1E7F39183C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85C7E904-FAC1-4B35-B1C5-A1E7F39183C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85C7E904-FAC1-4B35-B1C5-A1E7F39183C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85C7E904-FAC1-4B35-B1C5-A1E7F39183C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{307309AF-A95B-4BA7-A37F-AF896126327D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{307309AF-A95B-4BA7-A37F-AF896126327D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{307309AF-A95B-4BA7-A37F-AF896126327D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{307309AF-A95B-4BA7-A37F-AF896126327D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98F98D4F-4C05-4A13-B475-0C45478438B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98F98D4F-4C05-4A13-B475-0C45478438B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98F98D4F-4C05-4A13-B475-0C45478438B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98F98D4F-4C05-4A13-B475-0C45478438B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0773E1DB-C719-41FE-AC6B-6C188CFE069C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0773E1DB-C719-41FE-AC6B-6C188CFE069C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0773E1DB-C719-41FE-AC6B-6C188CFE069C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0773E1DB-C719-41FE-AC6B-6C188CFE069C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A9D6093-AB42-4FD6-A782-091A760E0F13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A9D6093-AB42-4FD6-A782-091A760E0F13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A9D6093-AB42-4FD6-A782-091A760E0F13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A9D6093-AB42-4FD6-A782-091A760E0F13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F84FDBC-D757-4887-809E-C016661AC802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F84FDBC-D757-4887-809E-C016661AC802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F84FDBC-D757-4887-809E-C016661AC802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F84FDBC-D757-4887-809E-C016661AC802}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FC4601C-C4E0-4C08-8420-245EF261FB48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FC4601C-C4E0-4C08-8420-245EF261FB48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FC4601C-C4E0-4C08-8420-245EF261FB48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FC4601C-C4E0-4C08-8420-245EF261FB48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF988E61-2794-450E-A7AD-265B9F37291E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF988E61-2794-450E-A7AD-265B9F37291E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF988E61-2794-450E-A7AD-265B9F37291E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF988E61-2794-450E-A7AD-265B9F37291E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0ACA542-523E-466E-B553-A930F6D236C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0ACA542-523E-466E-B553-A930F6D236C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0ACA542-523E-466E-B553-A930F6D236C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0ACA542-523E-466E-B553-A930F6D236C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EFF525D-3C73-42FB-8320-3E8587FC9554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EFF525D-3C73-42FB-8320-3E8587FC9554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EFF525D-3C73-42FB-8320-3E8587FC9554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EFF525D-3C73-42FB-8320-3E8587FC9554}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7F84FDBC-D757-4887-809E-C016661AC802} = {AC46CCE1-7DFC-49A8-BF1D-3EEBB2361E87}
+		{1EFF525D-3C73-42FB-8320-3E8587FC9554} = {8AF183E0-43C4-464F-BB29-6410327F9ED2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A707665-73FA-4D99-9A9C-E5146E3D0E89}
+	EndGlobalSection
+EndGlobal

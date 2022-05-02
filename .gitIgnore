@@ -1,0 +1,17 @@
+*bin
+*obj
+*Release
+*node_modules
+*Debug
+*Logs
+*vscode
+*xml
+*v1
+*v2
+*suo
+*dll
+*cache
+*user
+*testlog
+*manifest
+/.vs/ProgressiveTaxDemoApp/FileContentIndex
