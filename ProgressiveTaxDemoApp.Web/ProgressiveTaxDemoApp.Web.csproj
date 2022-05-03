@@ -13,6 +13,8 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="EntityFrameworkCore" Version="1.3.0" />
+    <PackageReference Include="IoC" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.4" />
@@ -20,8 +22,10 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
   </ItemGroup>
 
+	<!--Reference to nuget config file-->
+
+
   <ItemGroup>
-    <ProjectReference Include="..\Abstractions\Abstractions.csproj" />
     <ProjectReference Include="..\ProgressiveTaxDemoApp.DAL\ProgressiveTaxDemoApp.Database.csproj" />
     <ProjectReference Include="..\ProgressiveTaxDemoApp.Domain\ProgressiveTaxDemoApp.Domain.csproj" />
     <ProjectReference Include="..\ProgressiveTaxDemoApp.Services\ProgressiveTaxDemoApp.Framework.csproj" />

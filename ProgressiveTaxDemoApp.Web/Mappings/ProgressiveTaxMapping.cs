@@ -6,5 +6,5 @@ namespace ProgressiveTaxDemoApp.Web;
 
 public class ProgressiveTaxMapping : Profile
 {
-    public ProgressiveTaxMapping() => CreateMap<ProgressiveTaxModel, ProgressiveTax>().ReverseMap();
+    public ProgressiveTaxMapping() => CreateMap<ProgressiveTax, ProgressiveTaxModel>();
 }

@@ -6,5 +6,5 @@ namespace ProgressiveTaxDemoApp.Web.Mappings;
 
 public class TaxCalculationTypeMapping : Profile
 {
-    public TaxCalculationTypeMapping() => CreateMap<TaxCalculationTypeModel, TaxCalculationType>().ReverseMap();
+    public TaxCalculationTypeMapping() => CreateMap<TaxCalculationType, TaxCalculationTypeModel>();
 }

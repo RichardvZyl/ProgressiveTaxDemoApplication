@@ -1,11 +1,10 @@
-using Abstractions.Extensions;
+using Abstractions.EntityFrameworkCore;
 using Abstractions.IoC;
 using ProgressiveTaxDemoApp.Database;
 using ProgressiveTaxDemoApp.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.AddContextUseSql<ApplicationDbContext>();
 
 //builder.AddIdentityFramework<ApplicationDbContext>();
@@ -18,7 +17,7 @@ builder.Services.AddServices();
 
 builder.Services.AddEndpointDefintions();
 
-builder.Services.AddSingleton(ServiceExtensions.MapperSetup.CreateMapper());
+builder.Services.AddSingleton(Extensions.MapperSetup.CreateMapper());
 
 
 var app = builder.Build();
