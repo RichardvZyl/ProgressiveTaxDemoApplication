@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.0.0" />
-    <PackageReference Include="IoC" Version="1.1.0" />
+    <PackageReference Include="IoC" Version="1.1.1" />
     <PackageReference Include="Results" Version="1.0.0" />
   </ItemGroup>
 
