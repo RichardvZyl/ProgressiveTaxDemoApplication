@@ -13,6 +13,7 @@ public class ResultFilter<T> : IRouteHandlerFilter where T : class
 
     // this is a temporary work around to allow for the Result pattern in minimal API's I only later realized I would be returning the result object which is not what I wanted
     // but it also allows me to abstract validation!
+    // TODO: Add to personal Nuget Repository once .net 7.0 releases
     public async ValueTask<object?> InvokeAsync(RouteHandlerInvocationContext context, RouteHandlerFilterDelegate next)
     {
         var validatable = context.Parameters.SingleOrDefault(x => x?.GetType() == typeof(T)) as T;
