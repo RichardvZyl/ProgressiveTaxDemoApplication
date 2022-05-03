@@ -13,24 +13,30 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressiveTaxDemoApp.Domai
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressiveTaxDemoApp.Validation", "ProgressiveTaxDemoApp.Validation\ProgressiveTaxDemoApp.Validation.csproj", "{8A9D6093-AB42-4FD6-A782-091A760E0F13}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Abstractions", "Abstractions", "{AC46CCE1-7DFC-49A8-BF1D-3EEBB2361E87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressiveTaxDemoApplication.EndPoints", "ProgressiveTaxDemoApplication.EndPoints\ProgressiveTaxDemoApplication.EndPoints.csproj", "{0FC4601C-C4E0-4C08-8420-245EF261FB48}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abstractions", "Abstractions\Abstractions.csproj", "{7F84FDBC-D757-4887-809E-C016661AC802}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxDemoApplication.EndPoints", "ProgressiveTaxDemoApplication.EndPoints\ProgressiveTaxDemoApplication.EndPoints.csproj", "{0FC4601C-C4E0-4C08-8420-245EF261FB48}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxDemoApplication.DAL", "ProgressiveTaxDemoApplication.DAL\ProgressiveTaxDemoApplication.DAL.csproj", "{FF988E61-2794-450E-A7AD-265B9F37291E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressiveTaxDemoApplication.DAL", "ProgressiveTaxDemoApplication.DAL\ProgressiveTaxDemoApplication.DAL.csproj", "{FF988E61-2794-450E-A7AD-265B9F37291E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressiveTaxDemoApp.Models", "ProgressiveTaxDemoApp.Model\ProgressiveTaxDemoApp.Models.csproj", "{F0ACA542-523E-466E-B553-A930F6D236C0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8AF183E0-43C4-464F-BB29-6410327F9ED2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMapper.tests", "AutoMapper.tests\AutoMapper.tests.csproj", "{1EFF525D-3C73-42FB-8320-3E8587FC9554}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoMapper.tests", "AutoMapper.tests\AutoMapper.tests.csproj", "{1EFF525D-3C73-42FB-8320-3E8587FC9554}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{95CAE3D5-C95B-4F4E-BF80-6879F0F2EB11}"
 	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
 		.gitIgnore = .gitIgnore
+		nuget.config = nuget.config
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.tests", "Framework.tests\Framework.tests.csproj", "{2C8A22B8-E997-42C0-AEBD-88E2B692814B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.tests", "Repository.tests\Repository.tests.csproj", "{9D0CE9E6-0DED-4FCA-B036-4024FC7D63FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validator.tests", "Validator.tests\Validator.tests.csproj", "{807478B8-ABF1-44BB-8FD7-52B477E5FB24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endpoint.tests", "Endpoint.tests\Endpoint.tests.csproj", "{759DA994-3A04-4F86-8AA3-916D07B642B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,10 +64,6 @@ Global
 		{8A9D6093-AB42-4FD6-A782-091A760E0F13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A9D6093-AB42-4FD6-A782-091A760E0F13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A9D6093-AB42-4FD6-A782-091A760E0F13}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7F84FDBC-D757-4887-809E-C016661AC802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F84FDBC-D757-4887-809E-C016661AC802}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F84FDBC-D757-4887-809E-C016661AC802}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F84FDBC-D757-4887-809E-C016661AC802}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0FC4601C-C4E0-4C08-8420-245EF261FB48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0FC4601C-C4E0-4C08-8420-245EF261FB48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FC4601C-C4E0-4C08-8420-245EF261FB48}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -78,13 +80,32 @@ Global
 		{1EFF525D-3C73-42FB-8320-3E8587FC9554}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EFF525D-3C73-42FB-8320-3E8587FC9554}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EFF525D-3C73-42FB-8320-3E8587FC9554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C8A22B8-E997-42C0-AEBD-88E2B692814B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C8A22B8-E997-42C0-AEBD-88E2B692814B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C8A22B8-E997-42C0-AEBD-88E2B692814B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C8A22B8-E997-42C0-AEBD-88E2B692814B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D0CE9E6-0DED-4FCA-B036-4024FC7D63FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D0CE9E6-0DED-4FCA-B036-4024FC7D63FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D0CE9E6-0DED-4FCA-B036-4024FC7D63FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D0CE9E6-0DED-4FCA-B036-4024FC7D63FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807478B8-ABF1-44BB-8FD7-52B477E5FB24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807478B8-ABF1-44BB-8FD7-52B477E5FB24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807478B8-ABF1-44BB-8FD7-52B477E5FB24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807478B8-ABF1-44BB-8FD7-52B477E5FB24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{759DA994-3A04-4F86-8AA3-916D07B642B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{759DA994-3A04-4F86-8AA3-916D07B642B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{759DA994-3A04-4F86-8AA3-916D07B642B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{759DA994-3A04-4F86-8AA3-916D07B642B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{7F84FDBC-D757-4887-809E-C016661AC802} = {AC46CCE1-7DFC-49A8-BF1D-3EEBB2361E87}
 		{1EFF525D-3C73-42FB-8320-3E8587FC9554} = {8AF183E0-43C4-464F-BB29-6410327F9ED2}
+		{2C8A22B8-E997-42C0-AEBD-88E2B692814B} = {8AF183E0-43C4-464F-BB29-6410327F9ED2}
+		{9D0CE9E6-0DED-4FCA-B036-4024FC7D63FC} = {8AF183E0-43C4-464F-BB29-6410327F9ED2}
+		{807478B8-ABF1-44BB-8FD7-52B477E5FB24} = {8AF183E0-43C4-464F-BB29-6410327F9ED2}
+		{759DA994-3A04-4F86-8AA3-916D07B642B7} = {8AF183E0-43C4-464F-BB29-6410327F9ED2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A707665-73FA-4D99-9A9C-E5146E3D0E89}
