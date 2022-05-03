@@ -48,14 +48,9 @@ public class UserService : IUserService
 
         user.Update(model.PostalCode, model.BrutoSalary);
 
-        var result = await _repository.UpdateAsync(user)
+        return await _repository.UpdateAsync(user)
             ? await Result<IEnumerable<TaxCalculationType>>.SuccessAsync()
             : await Result<IEnumerable<TaxCalculationType>>.FailAsync();
-
-        if (result.Succeeded)
-            await _taxCalculationService.CalculateTax(user.Id);
-
-        return result;
     }
 
     public async Task<IResult> DeleteAsync(Guid id)
@@ -64,6 +59,7 @@ public class UserService : IUserService
             : await Result.FailAsync();
 
     public Task<IResult<UserModel>> GetByEmailAsync(string email) => throw new NotImplementedException();
+
 
     public class AddTaxToUserModel : IMappingAction<User, UserModel>
     {

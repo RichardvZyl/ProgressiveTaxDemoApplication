@@ -10,10 +10,14 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="Generics" Version="1.2.1" />
+    <PackageReference Include="Results" Version="1.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Abstractions\Abstractions.csproj" />
+  <!--Reference to nuget config file-->
+
+
+	<ItemGroup>
     <ProjectReference Include="..\ProgressiveTaxDemoApp.Domain\ProgressiveTaxDemoApp.Domain.csproj" />
     <ProjectReference Include="..\ProgressiveTaxDemoApplication.DAL\ProgressiveTaxDemoApplication.DAL.csproj" />
   </ItemGroup>

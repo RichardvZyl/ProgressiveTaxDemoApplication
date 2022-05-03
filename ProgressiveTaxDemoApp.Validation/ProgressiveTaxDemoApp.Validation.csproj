@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
 	<TargetFramework>net7.0</TargetFramework>
@@ -7,5 +7,15 @@
 	<LangVersion>preview</LangVersion>
 	<EnablePreviwFeatures>true</EnablePreviwFeatures>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.0.0" />
+    <PackageReference Include="Regex" Version="1.0.0" />
+  </ItemGroup>
+
+	<ItemGroup>
+    <ProjectReference Include="..\ProgressiveTaxDemoApp.Domain\ProgressiveTaxDemoApp.Domain.csproj" />
+    <ProjectReference Include="..\ProgressiveTaxDemoApp.Model\ProgressiveTaxDemoApp.Models.csproj" />
+  </ItemGroup>
 
 </Project>

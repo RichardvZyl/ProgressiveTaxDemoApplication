@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressiveTaxDemoApp.Web", "ProgressiveTaxDemoApp.Web\ProgressiveTaxDemoApp.Web.csproj", "{85C7E904-FAC1-4B35-B1C5-A1E7F39183C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressiveTaxDemoApp.Web", "ProgressiveTaxDemoApp\ProgressiveTaxDemoApp.Web.csproj", "{85C7E904-FAC1-4B35-B1C5-A1E7F39183C1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressiveTaxDemoApp.Framework", "ProgressiveTaxDemoApp.Services\ProgressiveTaxDemoApp.Framework.csproj", "{307309AF-A95B-4BA7-A37F-AF896126327D}"
 EndProject

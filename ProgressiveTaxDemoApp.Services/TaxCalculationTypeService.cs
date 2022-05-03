@@ -12,18 +12,15 @@ public interface ITaxCalculationTypeService : IGenericService<TaxCalculationType
 public class TaxCalculationTypeService : ITaxCalculationTypeService
 {
     private readonly ITaxCalculationTypeRepository _repository;
-    private readonly ITaxCalculationService _updateService;
     private readonly IMapper _autoMapper;
 
     public TaxCalculationTypeService
     (
         ITaxCalculationTypeRepository repository,
-        ITaxCalculationService updateService,
         IMapper autoMapper
     )
     {
         _repository = repository;
-        _updateService = updateService;
         _autoMapper = autoMapper;
     }
 

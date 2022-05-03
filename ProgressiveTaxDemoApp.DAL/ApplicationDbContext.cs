@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Abstractions.IoC;
 
 namespace ProgressiveTaxDemoApp.Database;
-public class ApplicationDbContext : IdentityDbContext
+public class ProgressiveTaxDatabaase : IdentityDbContext
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) {  }
+    public ProgressiveTaxDatabaase(DbContextOptions<ProgressiveTaxDatabaase> options) : base(options) {  }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

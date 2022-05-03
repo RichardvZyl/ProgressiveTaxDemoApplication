@@ -13,6 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.0.0" />
+    <PackageReference Include="IoC" Version="1.1.0" />
+    <PackageReference Include="Results" Version="1.0.0" />
+  </ItemGroup>
+
+	<ItemGroup>
     <ProjectReference Include="..\ProgressiveTaxDemoApp.Domain\ProgressiveTaxDemoApp.Domain.csproj" />
     <ProjectReference Include="..\ProgressiveTaxDemoApp.Services\ProgressiveTaxDemoApp.Framework.csproj" />
   </ItemGroup>

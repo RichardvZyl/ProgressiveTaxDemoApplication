@@ -9,11 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Domain" Version="1.0.0" />
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Abstractions\Abstractions.csproj" />
+  <!--Reference to nuget config file-->
+
+
+	<ItemGroup>
     <ProjectReference Include="..\ProgressiveTaxDemoApp.Model\ProgressiveTaxDemoApp.Models.csproj" />
   </ItemGroup>
 

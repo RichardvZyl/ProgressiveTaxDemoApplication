@@ -8,6 +8,17 @@ public sealed class UserConfiguration : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> builder)
     {
+        builder.ToTable(nameof(User));
 
+        builder.HasKey(x => x.Id);
+
+        builder.Property(x => x.Id);
+        builder.Property(x => x.PostalCode);
+        builder.Property(x => x.Salary);
+        builder.Property(x => x.Email).HasMaxLength(250); // no unnecessarily large NVarChar(Max) ColumnTypes
+
+        builder.Property(x => x.LastUpdated);
+
+        builder.Ignore(x => x.IsDeleted); // Soft delete not implemented here
     }
 }

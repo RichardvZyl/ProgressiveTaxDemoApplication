@@ -8,6 +8,16 @@ public sealed class ProgressiveTaxConfiguration : IEntityTypeConfiguration<Progr
 {
     public void Configure(EntityTypeBuilder<ProgressiveTax> builder)
     {
+        builder.ToTable(nameof(ProgressiveTax));
 
+        builder.HasKey(x => x.Id);
+
+        builder.Property(x => x.Id).ValueGeneratedOnAdd(); // Identity Column
+        builder.Property(x => x.Rate);
+        builder.Property(x => x.From);
+
+        builder.Property(x => x.LastUpdated);
+        
+        builder.Ignore(x => x.IsDeleted); // Soft delete not implemented here
     }
 }

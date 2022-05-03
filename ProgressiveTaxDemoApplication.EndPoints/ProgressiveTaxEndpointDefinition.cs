@@ -1,10 +1,12 @@
 ﻿using Abstractions.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
 using ProgressiveTaxDemoApp.Domain;
 using ProgressiveTaxDemoApp.Framework;
+using ProgressiveTaxDemoApp.Models;
 
-namespace ProgressiveTaxDemoApplication.EndPoints;
+namespace ProgressiveTaxDemoApp.Endpoints;
 
 public class ProgressiveTaxEndpointDefinition : IEndpointDefintion
 {
@@ -19,22 +21,22 @@ public class ProgressiveTaxEndpointDefinition : IEndpointDefintion
     {
         // Please note method groups no longer allocate more memory since C# 11 (current) 
         _ = app.MapPost($"{ControllerEndpoint}/{{model:ProgressiveTaxModel}}", _service.CreateAsync)
-                .AddFilter((ctx, next) => async (context) => await next(context));
+                .AddFilter<ValidationFilter<ProgressiveTaxModel>>();
 
         _ = app.MapGet(ControllerEndpoint, _service.ListAsync)
-                .AddFilter((ctx, next) => async (context) => await next(context));
+                .AddFilter<ResultFilter>();
 
         _ = app.MapGet($"{ControllerEndpoint}/{{id:int}}", _service.GetAsync)
-                .AddFilter((ctx, next) => async (context) => await next(context));
+                .AddFilter<ResultFilter>();
 
-        _ = app.MapPut($"{ControllerEndpoint}/{{taxCalculationType:TaxCalculationType}}", _service.UpdateAsync)
-                .AddFilter((ctx, next) => async (context) => await next(context));
+        _ = app.MapPut($"{ControllerEndpoint}/{{taxCalculationType:ProgressiveTaxModel}}", _service.UpdateAsync)
+                .AddFilter<ValidationFilter<ProgressiveTaxModel>>();
 
         _ = app.MapDelete($"{ControllerEndpoint}/{{id:int}}", _service.DeleteAsync)
-                .AddFilter((ctx, next) => async (context) => await next(context));
+                .AddFilter<ResultFilter>();
     }
 
     // this would have worked fine if I wanted to define the service methods within this class but I wanted to create a seperation
     // then I require DI to already have my services defined so I opted to use Scrutor
-    //public void DefineServices(IServiceCollection services) => services.AddSingleton<IProgressiveTaxService, ProgressiveTaxService>();
+    public void DefineServices(IServiceCollection services) { }
 }

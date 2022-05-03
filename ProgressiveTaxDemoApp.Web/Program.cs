@@ -5,7 +5,7 @@ using ProgressiveTaxDemoApp.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.AddContextUseSql<ApplicationDbContext>();
+builder.AddContextUseSql<ProgressiveTaxDatabaase>();
 
 //builder.AddIdentityFramework<ApplicationDbContext>();
 
