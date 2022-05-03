@@ -22,9 +22,6 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
   </ItemGroup>
 
-	<!--Reference to nuget config file-->
-
-
   <ItemGroup>
     <ProjectReference Include="..\ProgressiveTaxDemoApp.DAL\ProgressiveTaxDemoApp.Database.csproj" />
     <ProjectReference Include="..\ProgressiveTaxDemoApp.Domain\ProgressiveTaxDemoApp.Domain.csproj" />

@@ -14,10 +14,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
   </ItemGroup>
 
-  <!--Reference to nuget config file-->
-
-
-	<ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\ProgressiveTaxDemoApp.Domain\ProgressiveTaxDemoApp.Domain.csproj" />
   </ItemGroup>
 
