@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
-    <PackageReference Include="Generics" Version="1.2.1" />
+    <PackageReference Include="Generics" Version="1.2.2" />
     <PackageReference Include="Results" Version="1.0.0" />
   </ItemGroup>
 
