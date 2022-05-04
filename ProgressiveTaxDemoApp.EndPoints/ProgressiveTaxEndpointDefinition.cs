@@ -18,19 +18,19 @@ public class ProgressiveTaxEndpointDefinition : IEndpointDefintion
     public void DefineEndpoints(WebApplication app)
     {
         // Please note method groups no longer allocate more memory since C# 11 (current) 
-        _ = app.MapPost($"{ControllerEndpoint}/{{model:{nameof(ProgressiveTaxModel)}}}", CreateAsync)
+        _ = app.MapPost($"{ControllerEndpoint}/{{model}}", CreateAsync)
                 .AddFilter<ValidationFilter<ProgressiveTaxModel>>();
 
         _ = app.MapGet(ControllerEndpoint, ListAsync)
                 .AddFilter<ResultFilter>();
 
-        _ = app.MapGet($"{ControllerEndpoint}/{{id:int}}", GetAsync)
+        _ = app.MapGet($"{ControllerEndpoint}/{{id}}", GetAsync)
                 .AddFilter<ResultFilter>();
 
-        _ = app.MapPut($"{ControllerEndpoint}/{{taxCalculationType:{nameof(ProgressiveTaxModel)}}}", UpdateAsync)
+        _ = app.MapPut($"{ControllerEndpoint}/{{model}}", UpdateAsync)
                 .AddFilter<ValidationFilter<ProgressiveTaxModel>>();
 
-        _ = app.MapDelete($"{ControllerEndpoint}/{{id:int}}", DeleteAsync)
+        _ = app.MapDelete($"{ControllerEndpoint}/{{id}}", DeleteAsync)
                 .AddFilter<ResultFilter>();
     }
 

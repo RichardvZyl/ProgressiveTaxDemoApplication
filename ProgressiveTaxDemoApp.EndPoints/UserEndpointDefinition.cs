@@ -18,20 +18,20 @@ public class UserEndpointDefinition : IEndpointDefintion
     public void DefineEndpoints(WebApplication app)
     {
         // Please note method groups no longer allocate more memory since C# 11 (current)
-        _ = app.MapPost($"{ControllerEndpoint}/{{user:UserModel}}", CreateAsync)
+        _ = app.MapPost($"{ControllerEndpoint}/{{model}}", CreateAsync)
                 .AddFilter<ValidationFilter<UserModel>>()
                 .AllowAnonymous();
 
         _ = app.MapGet(ControllerEndpoint, ListAsync)
                 .AddFilter<ResultFilter>();
 
-        _ = app.MapGet($"{ControllerEndpoint}/{{email:string}}", GetByEmailAsync)
+        _ = app.MapGet($"{ControllerEndpoint}/{{email}}", GetByEmailAsync)
                 .AddFilter<ResultFilter>();
 
-        _ = app.MapPut($"{ControllerEndpoint}/{{user:UserModel}}", UpdateAsync)
+        _ = app.MapPut($"{ControllerEndpoint}/{{model}}", UpdateAsync)
                 .AddFilter<ValidationFilter<UserModel>>();
 
-        _ = app.MapDelete($"{ControllerEndpoint}/{{id:Guid}}", DeleteAsync)
+        _ = app.MapDelete($"{ControllerEndpoint}/{{id}}", DeleteAsync)
                 .AddFilter<ValidationFilter<UserModel>>();
     }
 
@@ -48,6 +48,11 @@ public class UserEndpointDefinition : IEndpointDefintion
          => await Result<UserModel>.SuccessAsync(
              _autoMapper.Map<UserModel>(
                  await _repository.GetByIdAsync(id)));
+
+    internal static Task<IResult<UserModel>> GetByEmailAsync(IUserRepository _repository, IMapper _autoMapper, string email)
+        => Result<UserModel>.SuccessAsync(
+            _autoMapper.Map<UserModel>(
+                _repository.GetByEmail(email)));
 
     internal static async Task<IResult<IEnumerable<UserModel>>> ListAsync(IUserRepository _repository, IMapper _autoMapper)
         => await Result<IEnumerable<UserModel>>.SuccessAsync(
@@ -72,9 +77,4 @@ public class UserEndpointDefinition : IEndpointDefintion
         => await _repository.DeleteAsync(id)
             ? await Result.SuccessAsync()
             : await Result.FailAsync();
-
-    internal static Task<IResult<UserModel>> GetByEmailAsync(IUserRepository _repository, IMapper _autoMapper, string email)
-        => Result<UserModel>.SuccessAsync(
-            _autoMapper.Map<UserModel>(
-                _repository.GetByEmail(email)));
 }
