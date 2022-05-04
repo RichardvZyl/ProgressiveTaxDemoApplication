@@ -92,7 +92,4 @@ public sealed class UserRepository : IUserRepository
             return (await connection.QueryAsync<User>(query, email)).FirstOrDefault();
         }
     }
-
-    public Task<IDictionary<Guid, User>> GetTableAsync() 
-        => throw new NotImplementedException(); //KISS
 }

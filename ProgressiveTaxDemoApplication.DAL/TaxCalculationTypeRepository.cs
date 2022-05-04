@@ -77,8 +77,4 @@ public sealed class TaxCalculationTypeRepository : ITaxCalculationTypeRepository
             return await connection.ExecuteAsync(query, id) == 1;
         }
     }
-
-    public async Task<IDictionary<int, TaxCalculationType>> GetTableAsync()
-        => throw new NotImplementedException(); // KISS
-
 }

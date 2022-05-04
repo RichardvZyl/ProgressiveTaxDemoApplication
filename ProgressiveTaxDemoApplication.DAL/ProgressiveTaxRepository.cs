@@ -78,8 +78,4 @@ public sealed class ProgressiveTaxRepository : IProgressiveTaxRepository
             return await connection.ExecuteAsync(query, id) == 1;
         }
     }
-
-    public async Task<IDictionary<int, ProgressiveTax>> GetTableAsync()
-        => throw new NotImplementedException(); // KISS
-
 }

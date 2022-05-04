@@ -1,5 +1,6 @@
 using Abstractions.EntityFrameworkCore;
 using Abstractions.IoC;
+using Abstractions.SwaggerExtension;
 using ProgressiveTaxDemoApp.Database;
 using ProgressiveTaxDemoApp.Web;
 
@@ -19,6 +20,8 @@ builder.Services.AddEndpointDefintions();
 
 builder.Services.AddSingleton(Extensions.MapperSetup.CreateMapper());
 
+builder.Services.AddSwagger();
+
 
 var app = builder.Build();
 
@@ -35,5 +38,7 @@ app.UseRouting();
 //app.UseAuthorization();
 
 app.MapRazorPages();
+
+app.UseSwagger();
 
 app.Run();
