@@ -14,7 +14,7 @@ public sealed class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(x => x.Id);
         builder.Property(x => x.PostalCode);
-        builder.Property(x => x.Salary);
+        builder.Property(x => x.Salary).HasColumnType("DECIMAL(9, 2)");
         builder.Property(x => x.Email).HasMaxLength(250); // no unnecessarily large NVarChar(Max) ColumnTypes
 
         builder.Property(x => x.LastUpdated);

@@ -106,28 +106,32 @@ public static class ContextSeed
                 Id = Guid.NewGuid(),
                 LastUpdated = DateTimeOffset.UtcNow,
                 Email = "example@example.com",
-                PostalCode = "7441"
+                PostalCode = "7441",
+                Salary = 1000000M
             },
             new
             {
                 Id = Guid.NewGuid(),
                 LastUpdated = DateTimeOffset.UtcNow,
                 Email = "test@test.com",
-                PostalCode = "A100"
+                PostalCode = "A100",
+                Salary = 130000M
             },
             new
             {
                 Id = Guid.NewGuid(),
                 LastUpdated = DateTimeOffset.UtcNow,
                 Email = "test@example.com",
-                PostalCode = "7000"
+                PostalCode = "7000",
+                Salary = 10000M
             },
             new
             {
                 Id = Guid.NewGuid(),
                 LastUpdated = DateTimeOffset.UtcNow,
                 Email = "example@test.com",
-                PostalCode = "1000"
+                PostalCode = "1000",
+                Salary = 100000M
             });
         });
     }
