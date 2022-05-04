@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProgressiveTaxDemoApp.Domain\ProgressiveTaxDemoApp.Domain.csproj" />
     <ProjectReference Include="..\ProgressiveTaxDemoApp.Model\ProgressiveTaxDemoApp.Models.csproj" />
   </ItemGroup>
 

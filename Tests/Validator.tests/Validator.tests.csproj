@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ProgressiveTaxDemoApp.DAL\ProgressiveTaxDemoApp.DAL.csproj" />
     <ProjectReference Include="..\..\ProgressiveTaxDemoApp.Validation\ProgressiveTaxDemoApp.Validation.csproj" />
   </ItemGroup>
 

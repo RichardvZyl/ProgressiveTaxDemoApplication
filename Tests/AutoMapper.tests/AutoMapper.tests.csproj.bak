@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\ProgressiveTaxDemoApp.Api\ProgressiveTaxDemoApp.Api.csproj" />
+    <ProjectReference Include="..\..\ProgressiveTaxDemoApp\ProgressiveTaxDemoApp.Api.csproj" />
   </ItemGroup>
 
 

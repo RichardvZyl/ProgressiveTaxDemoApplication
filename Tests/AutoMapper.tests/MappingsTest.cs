@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using ProgressiveTaxDemoApp.Web;
+using ProgressiveTaxDemoApp.Api;
 
 namespace AutoMapper.tests;
 public class MappingsTests
