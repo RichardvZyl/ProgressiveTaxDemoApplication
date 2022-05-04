@@ -1,5 +1,5 @@
 ﻿using ProgressiveTaxDemoApp.Models;
-using ProgressiveTaxDemoApplication.DAL;
+using ProgressiveTaxDemoApp.DAL;
 
 namespace ProgressiveTaxDemoApp.Framework;
 

@@ -14,22 +14,22 @@
     <PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.4" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
   </ItemGroup>
 
   <ItemGroup>
   	<PackageReference Include="EntityFrameworkCore" Version="1.4.0" />
-  	<PackageReference Include="IoC" Version="1.1.1" />
+  	<PackageReference Include="IoC" Version="1.1.2" />
   	<PackageReference Include="Swagger" Version="1.1.0" />
+  	<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ProgressiveTaxDemoApp.DAL\ProgressiveTaxDemoApp.Database.csproj" />
     <ProjectReference Include="..\ProgressiveTaxDemoApp.Domain\ProgressiveTaxDemoApp.Domain.csproj" />
     <ProjectReference Include="..\ProgressiveTaxDemoApp.Services\ProgressiveTaxDemoApp.Framework.csproj" />
+    <ProjectReference Include="..\ProgressiveTaxDemoApplication.EndPoints\ProgressiveTaxDemoApplication.EndPoints.csproj" />
   </ItemGroup>
 
 </Project>

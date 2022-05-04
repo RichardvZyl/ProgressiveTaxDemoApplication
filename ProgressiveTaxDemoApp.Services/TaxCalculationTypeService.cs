@@ -3,7 +3,7 @@ using Abstractions.Results;
 using AutoMapper;
 using ProgressiveTaxDemoApp.Domain;
 using ProgressiveTaxDemoApp.Models;
-using ProgressiveTaxDemoApplication.DAL;
+using ProgressiveTaxDemoApp.DAL;
 
 namespace ProgressiveTaxDemoApp.Framework;
 

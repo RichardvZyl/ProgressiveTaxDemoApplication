@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ProgressiveTaxDemoApp.Pages;
+namespace WebApplication1.Pages;
 public class PrivacyModel : PageModel
 {
     private readonly ILogger<PrivacyModel> _logger;

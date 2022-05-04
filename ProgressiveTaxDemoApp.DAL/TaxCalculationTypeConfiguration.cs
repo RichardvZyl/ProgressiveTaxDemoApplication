@@ -12,7 +12,7 @@ public sealed class TaxCalculationTypeConfiguration : IEntityTypeConfiguration<T
 
         builder.HasKey(x => x.Id);
 
-        builder.Property(x => x.Id).ValueGeneratedOnAdd(); // Identity Column
+        builder.Property(x => x.Id).ValueGeneratedOnAdd();
         builder.Property(x => x.PostalCode).HasMaxLength(10); // no unnecessarily large NVarChar(Max) ColumnTypes //  the longest postal code currently in use in the world is 10 digits long.
         builder.Property(x => x.TaxType);
 

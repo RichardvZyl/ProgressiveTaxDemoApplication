@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using ProgressiveTaxDemoApp.Database;
 using ProgressiveTaxDemoApp.Domain;
 
-namespace ProgressiveTaxDemoApplication.DAL;
+namespace ProgressiveTaxDemoApp.DAL;
 
 public interface IProgressiveTaxRepository : IGenericRepository<ProgressiveTax, int> { }
 

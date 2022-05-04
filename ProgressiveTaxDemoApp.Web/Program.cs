@@ -1,8 +1,8 @@
 using Abstractions.EntityFrameworkCore;
-using Abstractions.IoC;
-using Abstractions.SwaggerExtension;
+using ProgressiveTaxDemoApp.Endpoints;
 using ProgressiveTaxDemoApp.Database;
 using ProgressiveTaxDemoApp.Web;
+using ProgressiveTaxDemoApp.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,14 +14,11 @@ builder.Services.AddRazorPages();
 
 //builder.Services.AddSecurity();
 
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
 builder.Services.AddServices();
 
-builder.Services.AddEndpointDefintions();
-
-builder.Services.AddSingleton(Extensions.MapperSetup.CreateMapper());
-
-builder.Services.AddSwagger();
-
+builder.Services.AddEndpointDefintions(typeof(User));
 
 var app = builder.Build();
 
@@ -38,7 +35,5 @@ app.UseRouting();
 //app.UseAuthorization();
 
 app.MapRazorPages();
-
-app.UseSwagger();
 
 app.Run();

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ProgressiveTaxDemoApp.Pages;
+namespace WebApplication1.Pages;
 public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> _logger;

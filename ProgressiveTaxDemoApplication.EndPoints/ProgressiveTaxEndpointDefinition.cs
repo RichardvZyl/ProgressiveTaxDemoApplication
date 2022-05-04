@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using ProgressiveTaxDemoApp.Domain;
 using ProgressiveTaxDemoApp.Framework;
 using ProgressiveTaxDemoApp.Models;
+using ProgressiveTaxDemoApp.DAL;
+using Abstractions.Generics;
 
 namespace ProgressiveTaxDemoApp.Endpoints;
 
@@ -38,5 +40,9 @@ public class ProgressiveTaxEndpointDefinition : IEndpointDefintion
 
     // this would have worked fine if I wanted to define the service methods within this class but I wanted to create a seperation
     // then I require DI to already have my services defined so I opted to use Scrutor
-    public void DefineServices(IServiceCollection services) { }
+    public void DefineServices(IServiceCollection services) 
+    {
+        services.AddSingleton<IGenericRepository<ProgressiveTax, int>, ProgressiveTaxRepository>();
+        services.AddSingleton<IGenericService<ProgressiveTax, ProgressiveTaxModel, int>, ProgressiveTaxService>();
+    }
 }

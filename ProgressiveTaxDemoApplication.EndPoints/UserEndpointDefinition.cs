@@ -1,7 +1,7 @@
-﻿using Abstractions.IoC;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using ProgressiveTaxDemoApp.DAL;
 using ProgressiveTaxDemoApp.Domain;
 using ProgressiveTaxDemoApp.Framework;
 using ProgressiveTaxDemoApp.Models;
@@ -38,6 +38,10 @@ public class UserEndpointDefinition : IEndpointDefintion
 
     // this would have worked fine if I wanted to define the service methods within this class but I wanted to create a seperation
     // then I require DI to already have my services defined so I opted to use Scrutor
-    public void DefineServices(IServiceCollection services) { }
-
+    public void DefineServices(IServiceCollection services)
+    {
+        services.AddSingleton<ITaxCalculationService, TaxCalculationService>();
+        services.AddSingleton<IUserRepository, UserRepository>();
+        services.AddSingleton<IUserService, UserService>();
+    }
 }
