@@ -2,8 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+	<Nullable>enable</Nullable>
+	<ImplicitUsings>true</ImplicitUsings>
+	<LangVersion>preview</LangVersion>
+	<EnablePreviewFeatures>true</EnablePreviewFeatures>	
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\ProgressiveTaxDemoApp.Web\ProgressiveTaxDemoApp.Web.csproj" />
   </ItemGroup>
+
 
 
 </Project>

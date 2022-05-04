@@ -5,12 +5,15 @@
 	<Nullable>enable</Nullable>
 	<ImplicitUsings>true</ImplicitUsings>
 	<LangVersion>preview</LangVersion>
-	<EnablePreviwFeatures>true</EnablePreviwFeatures>
+	<EnablePreviewFeatures>true</EnablePreviewFeatures>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Domain" Version="1.0.0" />
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+  	<PackageReference Include="Domain" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>

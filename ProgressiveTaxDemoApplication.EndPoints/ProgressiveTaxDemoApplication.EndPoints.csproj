@@ -5,7 +5,7 @@
 	<Nullable>enable</Nullable>
 	<ImplicitUsings>true</ImplicitUsings>
 	<LangVersion>preview</LangVersion>
-	<EnablePreviwFeatures>true</EnablePreviwFeatures>
+	<EnablePreviewFeatures>true</EnablePreviewFeatures>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,8 +14,11 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.0.0" />
-    <PackageReference Include="IoC" Version="1.1.1" />
-    <PackageReference Include="Results" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+  	<PackageReference Include="IoC" Version="1.1.1" />
+  	<PackageReference Include="Results" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -5,13 +5,16 @@
 	 <Nullable>enable</Nullable>
 	 <ImplicitUsings>true</ImplicitUsings>
 	 <LangVersion>preview</LangVersion>
-	 <EnablePreviwFeatures>true</EnablePreviwFeatures>
+	 <EnablePreviewFeatures>true</EnablePreviewFeatures>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IoC" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+  	<PackageReference Include="IoC" Version="1.1.1" />
   </ItemGroup>
 
   <ItemGroup>

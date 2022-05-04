@@ -5,12 +5,15 @@
 	<Nullable>enable</Nullable>
 	<ImplicitUsings>true</ImplicitUsings>
 	<LangVersion>preview</LangVersion>
-	<EnablePreviwFeatures>true</EnablePreviwFeatures>
+	<EnablePreviewFeatures>true</EnablePreviewFeatures>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.0.0" />
-    <PackageReference Include="Regex" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+  	<PackageReference Include="Regex" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>

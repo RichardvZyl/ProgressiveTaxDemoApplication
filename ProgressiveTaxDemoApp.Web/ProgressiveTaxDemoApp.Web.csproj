@@ -7,20 +7,23 @@
 	<Nullable>enable</Nullable>
 	<ImplicitUsings>true</ImplicitUsings>
 	<LangVersion>preview</LangVersion>
-	<EnablePreviwFeatures>true</EnablePreviwFeatures>
+	<EnablePreviewFeatures>true</EnablePreviewFeatures>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
-    <PackageReference Include="EntityFrameworkCore" Version="1.4.0" />
-    <PackageReference Include="IoC" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
-    <PackageReference Include="Swagger" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+  	<PackageReference Include="EntityFrameworkCore" Version="1.4.0" />
+  	<PackageReference Include="IoC" Version="1.1.1" />
+  	<PackageReference Include="Swagger" Version="1.1.0" />
   </ItemGroup>
 
   <ItemGroup>
