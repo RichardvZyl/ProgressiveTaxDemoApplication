@@ -1,9 +1,8 @@
 ﻿using System.Data;
-using Abstractions.AspNetCore;
 using Abstractions.Generics;
 using Dapper;
 using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 using ProgressiveTaxDemoApp.Database;
 using ProgressiveTaxDemoApp.Domain;
 
@@ -15,8 +14,9 @@ public sealed class TaxCalculationTypeRepository : ITaxCalculationTypeRepository
 {
     private readonly string _connectionString;
 
-    public TaxCalculationTypeRepository(IServiceCollection services)
-        => _connectionString = ServiceExtensions.GetConnectionString(services, nameof(ProgressiveTaxDatabase));
+    public TaxCalculationTypeRepository(IConfiguration configuration)
+        => _connectionString = configuration.GetSection("Secrets")?
+                                [nameof(ProgressiveTaxDatabase)] ?? string.Empty;
 
     public async Task<int> CreateAsync(TaxCalculationType model)
     {

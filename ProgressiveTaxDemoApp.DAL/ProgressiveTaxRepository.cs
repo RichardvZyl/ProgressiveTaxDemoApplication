@@ -1,9 +1,8 @@
 ﻿using System.Data;
-using Abstractions.AspNetCore;
 using Abstractions.Generics;
 using Dapper;
 using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 using ProgressiveTaxDemoApp.Database;
 using ProgressiveTaxDemoApp.Domain;
 
@@ -15,67 +14,61 @@ public sealed class ProgressiveTaxRepository : IProgressiveTaxRepository
 {
     private readonly string _connectionString;
 
-    public ProgressiveTaxRepository(IServiceCollection services)
-        => _connectionString = ServiceExtensions.GetConnectionString(services, nameof(ProgressiveTaxDatabase));
-
+    public ProgressiveTaxRepository(IConfiguration configuration)
+        => _connectionString = configuration.GetSection("Secrets")?
+                                [nameof(ProgressiveTaxDatabase)] ?? string.Empty;
 
     public async Task<int> CreateAsync(ProgressiveTax model)
     {
-        using (IDbConnection connection = new SqlConnection(_connectionString))
-        {
-            var sqlCommand = @$"INSERT INTO dbo.{nameof(ProgressiveTax)}
-                                   (Rate, From, LastUpdated) 
-                                   VALUES(@Rate, @From, @LastUpdated)";
+        using IDbConnection connection = new SqlConnection(_connectionString);
 
-            _ = await connection.ExecuteAsync(sqlCommand, model);
+        var sqlCommand = @$"INSERT INTO dbo.{nameof(ProgressiveTax)}
+                                (Rate, From, LastUpdated) 
+                                VALUES(@Rate, @From, @LastUpdated)";
 
-            return model.Id;
-        }
+        _ = await connection.ExecuteAsync(sqlCommand, model);
+
+        return model.Id;
     }
 
     public async Task<ProgressiveTax?> GetByIdAsync(int id)
     {
-        using (IDbConnection connection = new SqlConnection(_connectionString))
-        {
-            var query = @$"SELECT Id, Rate, From, LastUpdated
-                                FROM dbo.{nameof(ProgressiveTax)}
-                                WHERE Id = @id";
+        using IDbConnection connection = new SqlConnection(_connectionString);
 
-            return (await connection.QueryAsync<ProgressiveTax>(query, id)).FirstOrDefault();
-        }
+        var query = @$"SELECT Id, Rate, From, LastUpdated
+                            FROM dbo.{nameof(ProgressiveTax)}
+                            WHERE Id = @id";
+
+        return (await connection.QueryAsync<ProgressiveTax>(query, id)).FirstOrDefault();
     }
 
     public async Task<IEnumerable<ProgressiveTax>> ListAsync()
     {
-        using (IDbConnection connection = new SqlConnection(_connectionString))
-        {
-            var query = @$"SELECT Id, Rate, From, LastUpdated
-                                FROM dbo.{nameof(ProgressiveTax)}";
+        using IDbConnection connection = new SqlConnection(_connectionString);
 
-            return await connection.QueryAsync<ProgressiveTax>(query) ?? new List<ProgressiveTax>();
-        }
+        var query = @$"SELECT Id, Rate, From, LastUpdated
+                            FROM dbo.{nameof(ProgressiveTax)}";
+
+        return await connection.QueryAsync<ProgressiveTax>(query) ?? new List<ProgressiveTax>();
     }
 
     public async Task<bool> UpdateAsync(ProgressiveTax model)
     {
-        using (IDbConnection connection = new SqlConnection(_connectionString))
-        {
-            var query = @$"UPDATE dbo.{nameof(ProgressiveTax)}
-                                Rate = @Rate, From = @From, LastUpdated = @LastUpdated
-                                WHERE Id = @Id";
+        using IDbConnection connection = new SqlConnection(_connectionString);
+        var query = @$"UPDATE dbo.{nameof(ProgressiveTax)}
+                            Rate = @Rate, From = @From, LastUpdated = @LastUpdated
+                            WHERE Id = @Id";
 
-            return await connection.ExecuteAsync(query, model) == 1;
-        }
+        return await connection.ExecuteAsync(query, model) == 1;
     }
 
     public async Task<bool> DeleteAsync(int id)
     {
-        using (IDbConnection connection = new SqlConnection(_connectionString))
-        {
-            var query = @$"DELETE FROM dbo.{nameof(ProgressiveTax)}
-                                WHERE Id = @id";
+        using IDbConnection connection = new SqlConnection(_connectionString);
 
-            return await connection.ExecuteAsync(query, id) == 1;
-        }
+        var query = @$"DELETE FROM dbo.{nameof(ProgressiveTax)}
+                            WHERE Id = @id";
+
+        return await connection.ExecuteAsync(query, id) == 1;
     }
 }

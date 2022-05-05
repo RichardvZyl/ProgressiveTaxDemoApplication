@@ -9,8 +9,8 @@ public static class Extensions
 {
     public static void AddServices(this IServiceCollection services)
     {
-        services.AddTransient<IServiceCollection, ServiceCollection>();
-        services.AddTransient<IMappingAction<User, UserModel>, AddTaxToUserModel>();
+        services.AddSingleton<IServiceCollection, ServiceCollection>();
+        services.AddSingleton<IMappingAction<User, UserModel>, AddTaxToUserModel>();
     }
 
     public static MapperConfiguration MapperSetup

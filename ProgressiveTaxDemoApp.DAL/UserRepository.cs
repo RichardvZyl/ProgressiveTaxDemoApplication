@@ -1,9 +1,8 @@
 ﻿using System.Data;
-using Abstractions.AspNetCore;
+using System.Data.SqlClient;
 using Abstractions.Generics;
 using Dapper;
-using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 using ProgressiveTaxDemoApp.Database;
 using ProgressiveTaxDemoApp.Domain;
 
@@ -18,21 +17,21 @@ public sealed class UserRepository : IUserRepository
 {
     private readonly string _connectionString;
 
-    public UserRepository(IServiceCollection services)
-        => _connectionString = ServiceExtensions.GetConnectionString(services, nameof(ProgressiveTaxDatabase));
+    public UserRepository(IConfiguration configuration)
+        => _connectionString = configuration.GetSection("Secrets")?
+                                [nameof(ProgressiveTaxDatabase)] ?? string.Empty;
 
     public async Task<Guid> CreateAsync(User model)
     {
-        using (IDbConnection connection = new SqlConnection(_connectionString))
-        {
-            var sqlCommand = @$"INSERT INTO dbo.{nameof(User)}
-                                   (Rate, From, LastUpdated) 
-                                   VALUES(@Rate, @From, @LastUpdated)";
+        using IDbConnection connection = new SqlConnection(_connectionString);
 
-            _ = await connection.ExecuteAsync(sqlCommand, model);
+        var sqlCommand = @$"INSERT INTO dbo.{nameof(User)}
+                                 (Rate, From, LastUpdated) 
+                                 VALUES(@Rate, @From, @LastUpdated)";
 
-            return model.Id;
-        }
+        _ = await connection.ExecuteAsync(sqlCommand, model);
+
+        return model.Id;
     }
 
     public async Task<User?> GetByIdAsync(Guid id)
