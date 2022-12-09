@@ -4,9 +4,9 @@ using IResult = Abstractions.Results.IResult;
 
 namespace ProgressiveTaxDemoApp.Endpoints;
 
-public class ResultFilter : IRouteHandlerFilter
+public class ResultFilter : IEndpointFilter
 {
-    public async ValueTask<object?> InvokeAsync(RouteHandlerInvocationContext context, RouteHandlerFilterDelegate next)
+    public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context, EndpointFilterDelegate next)
     {
         // before endpoint call // used for validation or middleware
         var result = await next(context);

@@ -19,19 +19,19 @@ public class ProgressiveTaxEndpointDefinition : IEndpointDefintion
     {
         // Please note method groups no longer allocate more memory since C# 11 (current) 
         _ = app.MapPost($"{ControllerEndpoint}/{{model}}", CreateAsync)
-                .AddFilter<ValidationFilter<ProgressiveTaxModel>>();
+                .AddEndpointFilter<ValidationFilter<ProgressiveTaxModel>>();
 
         _ = app.MapGet(ControllerEndpoint, ListAsync)
-                .AddFilter<ResultFilter>();
+                .AddEndpointFilter<ResultFilter>();
 
         _ = app.MapGet($"{ControllerEndpoint}/{{id}}", GetAsync)
-                .AddFilter<ResultFilter>();
+                .AddEndpointFilter<ResultFilter>();
 
         _ = app.MapPut($"{ControllerEndpoint}/{{model}}", UpdateAsync)
-                .AddFilter<ValidationFilter<ProgressiveTaxModel>>();
+                .AddEndpointFilter<ValidationFilter<ProgressiveTaxModel>>();
 
         _ = app.MapDelete($"{ControllerEndpoint}/{{id}}", DeleteAsync)
-                .AddFilter<ResultFilter>();
+                .AddEndpointFilter<ResultFilter>();
     }
 
     public void DefineServices(IServiceCollection services)

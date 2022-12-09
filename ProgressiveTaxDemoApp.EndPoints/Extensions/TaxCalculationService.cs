@@ -30,7 +30,7 @@ public sealed class TaxCalculationService : ITaxCalculationService
     {
         var user = await _userRepository.GetByIdAsync(userId);
 
-        var taxType = (await _taxCalculationTypeRepository.ListAsync()).FirstOrDefault(x => x.PostalCode == user.PostalCode);
+        var taxType = (await _taxCalculationTypeRepository.ListAsync()).FirstOrDefault(x => x.PostalCode == user?.PostalCode);
 
         var taxOnSalary = taxType?.TaxType switch
         {

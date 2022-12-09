@@ -19,19 +19,19 @@ public class TaxCalculationTypeDefintion : IEndpointDefintion
     {
         // Please note method groups no longer allocate more memory since C# 11 (current) 
         _ = app.MapPost($"{ControllerEndpoint}/{{model}}", CreateAsync)
-                .AddFilter<ValidationFilter<TaxCalculationTypeModel>>();
+                .AddEndpointFilter<ValidationFilter<TaxCalculationTypeModel>>();
 
         _ = app.MapGet(ControllerEndpoint, ListAsync)
-                .AddFilter<ResultFilter>();
+                .AddEndpointFilter<ResultFilter>();
 
         _ = app.MapGet($"{ControllerEndpoint}/{{id}}", GetAsync)
-                .AddFilter<ResultFilter>();
+                .AddEndpointFilter<ResultFilter>();
 
         _ = app.MapPut($"{ControllerEndpoint}/{{model}}", UpdateAsync)
-                .AddFilter<ValidationFilter<TaxCalculationTypeModel>>();
+                .AddEndpointFilter<ValidationFilter<TaxCalculationTypeModel>>();
 
         _ = app.MapDelete($"{ControllerEndpoint}/{{id}}", DeleteAsync)
-                .AddFilter<ResultFilter>();
+                .AddEndpointFilter<ResultFilter>();
     }
 
     public void DefineServices(IServiceCollection services)

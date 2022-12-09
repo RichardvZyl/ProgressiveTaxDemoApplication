@@ -5,16 +5,16 @@ using IResult = Abstractions.Results.IResult;
 
 namespace ProgressiveTaxDemoApp.Endpoints;
 
-public class ValidationFilter<T> : IRouteHandlerFilter where T : class
+public class ValidationFilter<T> : IEndpointFilter where T : class
 {
     private readonly IValidator<T> _validator;
 
     public ValidationFilter(IValidator<T> validator) => _validator = validator;
 
 
-    public async ValueTask<object?> InvokeAsync(RouteHandlerInvocationContext context, RouteHandlerFilterDelegate next)
+    public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context, EndpointFilterDelegate next)
     {
-        var validatable = context.Parameters.SingleOrDefault(x => x?.GetType() == typeof(T)) as T;
+        var validatable = context.Arguments.SingleOrDefault(x => x?.GetType() == typeof(T)) as T;
 
         if (validatable is null)
             return await Result.FailAsync(string.Empty, 400).ResultAsync();

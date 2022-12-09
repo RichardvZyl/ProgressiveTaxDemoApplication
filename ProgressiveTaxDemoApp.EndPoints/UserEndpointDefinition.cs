@@ -19,20 +19,20 @@ public class UserEndpointDefinition : IEndpointDefintion
     {
         // Please note method groups no longer allocate more memory since C# 11 (current)
         _ = app.MapPost($"{ControllerEndpoint}/{{model}}", CreateAsync)
-                .AddFilter<ValidationFilter<UserModel>>()
+                .AddEndpointFilter<ValidationFilter<UserModel>>()
                 .AllowAnonymous();
 
         _ = app.MapGet(ControllerEndpoint, ListAsync)
-                .AddFilter<ResultFilter>();
+                .AddEndpointFilter<ResultFilter>();
 
         _ = app.MapGet($"{ControllerEndpoint}/{{email}}", GetByEmailAsync)
-                .AddFilter<ResultFilter>();
+                .AddEndpointFilter<ResultFilter>();
 
         _ = app.MapPut($"{ControllerEndpoint}/{{model}}", UpdateAsync)
-                .AddFilter<ValidationFilter<UserModel>>();
+                .AddEndpointFilter<ValidationFilter<UserModel>>();
 
         _ = app.MapDelete($"{ControllerEndpoint}/{{id}}", DeleteAsync)
-                .AddFilter<ValidationFilter<UserModel>>();
+                .AddEndpointFilter<ValidationFilter<UserModel>>();
     }
 
     public void DefineServices(IServiceCollection services)
